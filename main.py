@@ -74,9 +74,11 @@ while True:
                 nickname = cses_client.get_user_nickname(cses_id)
                 try:
                     bot.send_message(os.getenv("CHANNEL_ID"), text=get_random_message(nickname, task), parse_mode='HTML')
+                    print(nickname, task)
                     db.update_user(cses_id)
                 except Exception as e:
                     print(f"[ERROR] Failed to send Telegram message: {e}")
         except Exception as e:
             print(f"[ERROR] Problem with cses_id {cses_id}: {e}")
+        print("Проверено ✅")
     time.sleep(10)

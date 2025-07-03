@@ -19,6 +19,7 @@ class CsesClient:
                 raise Exception("Login Failed")
         except Exception as e:
             print(f"[ERROR] Failed to initialize CsesClient: {e}")
+            raise
 
     def get_user_tasks(self, cses_id):
         try:
