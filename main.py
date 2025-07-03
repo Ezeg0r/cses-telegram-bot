@@ -80,5 +80,5 @@ while True:
                     print(f"[ERROR] Failed to send Telegram message: {e}")
         except Exception as e:
             print(f"[ERROR] Problem with cses_id {cses_id}: {e}")
-        print("Проверено ✅")
+    print("Проверено ✅")
     time.sleep(10)
