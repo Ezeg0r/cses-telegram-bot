@@ -3,14 +3,16 @@ import os
 
 class Db:
     def __init__(self, cses_client, collection_name):
-        self.cses_client = cses_client
+            self.cses_client = cses_client
 
-        username = os.getenv("MONGO_INITDB_ROOT_USERNAME")
-        password = os.getenv("MONGO_INITDB_ROOT_PASSWORD")
+            username = os.getenv("MONGO_INITDB_ROOT_USERNAME")
+            password = os.getenv("MONGO_INITDB_ROOT_PASSWORD")
 
-        client = MongoClient(f'mongodb://{username}:{password}@127.0.0.1:27017')
-        db = client.cses
-        self.users = db[collection_name]
+            client = MongoClient(f'mongodb://{username}:{password}@mongo:27017')
+            if (not client):
+                raise
+            db = client.cses
+            self.users = db[collection_name]
 
     def add_user(self, cses_id):
         user = {

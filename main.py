@@ -78,5 +78,4 @@ while True:
         except Exception as e:
             print(f"[ERROR] Problem with cses_id {cses_id}: {e}")
     print("Проверено ✅")
-    #bot.send_message(os.getenv("CHANNEL_ID"), text="Проверено ✅", parse_mode='HTML')
     time.sleep(10)
