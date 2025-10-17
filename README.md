@@ -1,50 +1,60 @@
 # CSES Telegram Bot
 
-**CSES Telegram Bot** — это сервис, который отслеживает решения задач пользователями на сайте [CSES](https://cses.fi/) и отправляет уведомления в Telegram, когда кто-то решает задачу.  
+**CSES Telegram Bot** is a service that tracks users' problem solutions on [CSES](https://cses.fi/) and sends notifications to Telegram when someone solves a problem.
 
-Сервис работает с использованием **Docker Compose** для удобного разворачивания.
-
----
-
-## Функционал
-
-- Парсит сайт CSES и проверяет, какие задачи решили указанные пользователи.  
-- Отслеживает новые решения и отправляет уведомления в Telegram-группу.  
-- Полностью настраивается через `.env` файл.
+The service uses **Docker Compose** for easy deployment.
 
 ---
 
-## Требования
+## Features
 
-- Docker  
-- Docker Compose  
-- Telegram бот и группа (для отправки уведомлений)  
+* Parses the CSES website and checks which problems specified users have solved.
+* Monitors new solutions and sends notifications to a Telegram group.
+* Fully configurable via a `.env` file.
 
 ---
 
-## Установка
+## Requirements
 
-1. Склонируйте репозиторий:
+* Docker
+* Docker Compose
+* Telegram bot and group (for sending notifications)
+
+---
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/cses-tracker-bot.git
-cd cses-tracker-bot
+git clone https://github.com/yourusername/cses-telegram-bot.git
+cd cses-telegram-bot
 ```
 
-
-2. Создайте файл `.env` и заполните его:
+2. Create a `.env` file and fill it in:
 
 ```env
-MONGO_INITDB_ROOT_USERNAME=пароль_для_базы_данных
-MONGO_INITDB_ROOT_PASSWORD=логин_для_базы_данных
-CSES_USERNAME=логин_cses_fi
-CSES_PASSWORD=пароль_cses_fi
-TOKEN=токен_бота_в_телеграмм
-CHANNEL_ID=id_чата_или_канала
+MONGO_INITDB_ROOT_USERNAME=database_username
+MONGO_INITDB_ROOT_PASSWORD=database_password
+CSES_USERNAME=cses_username
+CSES_PASSWORD=cses_password
+TOKEN=telegram_bot_token
+CHANNEL_ID=chat_or_channel_id
 ```
 
+3. Add user IDs to the `cses_ids.txt` file:
 
-3. Запустите проект через Docker Compose:
+```cses_ids
+192852
+252177
+252209
+345370
+283319
+345367
+252191
+```
+
+4. Start the project using Docker Compose:
 
 ```bash
 docker-compose up -d
@@ -52,15 +62,12 @@ docker-compose up -d
 
 ---
 
-## Использование
+## Usage
 
-После запуска бот автоматически проверяет решения пользователей и отправляет уведомления в указанную группу Telegram.
+After starting, the bot automatically checks users' solved problems and sends notifications to the specified Telegram group.
 
-Пример уведомления:
+Example notification:
 
 ```
-📘 Ezegor завершил Two Knights!
+📘 Ezegor completed Two Knights!
 ```
-
----
-
