@@ -49,18 +49,19 @@ for cses_id in cses_ids:
 
 def get_random_message(nickname, task):
     messages = [
-    f"🎉 <code>{nickname}</code> успешно решил <i>{task}</i>!",
-    f"<code>{nickname}</code> справился с задачей <i>{task}</i> ✅",
-    f"Задача <i>{task}</i> покорилась <code>{nickname}</code> 💪",
-    f"📘 <code>{nickname}</code> завершил <i>{task}</i>!",
-    f"<i>{task}</i> — выполнено пользователем <code>{nickname}</code> 🚀",
-    f"🥳 <code>{nickname}</code> закрыл задание <i>{task}</i>!",
-    f"✅ <code>{nickname}</code> решил <i>{task}</i> как профи!",
-    f"📚 <code>{nickname}</code> преодолел <i>{task}</i>!",
-    f"🎯 Миссия <i>{task}</i> выполнена! Исполнитель — <code>{nickname}</code>.",
-    f"<code>{nickname}</code> добавил в коллекцию решённых задач: <i>{task}</i> 🧠",
+        f"🎉 <code>{nickname}</code> successfully solved <i>{task}</i>!",
+        f"<code>{nickname}</code> completed the task <i>{task}</i> ✅",
+        f"The task <i>{task}</i> was conquered by <code>{nickname}</code> 💪",
+        f"📘 <code>{nickname}</code> finished <i>{task}</i>!",
+        f"<i>{task}</i> — completed by <code>{nickname}</code> 🚀",
+        f"🥳 <code>{nickname}</code> closed the assignment <i>{task}</i>!",
+        f"✅ <code>{nickname}</code> solved <i>{task}</i> like a pro!",
+        f"📚 <code>{nickname}</code> overcame <i>{task}</i>!",
+        f"🎯 Mission <i>{task}</i> accomplished! Performer — <code>{nickname}</code>.",
+        f"<code>{nickname}</code> added <i>{task}</i> to their collection of solved problems 🧠",
     ]
     return random.choice(messages)
+
 
 
 while True:
