@@ -8,7 +8,7 @@ class Db:
         username = os.getenv("MONGO_INITDB_ROOT_USERNAME")
         password = os.getenv("MONGO_INITDB_ROOT_PASSWORD")
 
-        client = MongoClient(f'mongodb://{username}:{password}@mongo:27017')
+        client = MongoClient(f'mongodb://{username}:{password}@127.0.0.1:27017')
         db = client.cses
         self.users = db[collection_name]
 

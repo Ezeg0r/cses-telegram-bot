@@ -18,11 +18,8 @@ except Exception as e:
 db = Db(cses_client, "users")
 
 
-
-
-#db.add_user("Ezegor", 192852)
-
-cses_ids = [192852,252177, 252209, 345370, 283319, 345367, 252191]
+with open("cses_ids.txt", "r") as f:
+    cses_ids = [int(line.strip()) for line in f if line.strip()]
 
 def check_for_solved_task(cses_id):
     old_tasks = db.get_user_tasks(cses_id)
@@ -81,4 +78,5 @@ while True:
         except Exception as e:
             print(f"[ERROR] Problem with cses_id {cses_id}: {e}")
     print("Проверено ✅")
+    #bot.send_message(os.getenv("CHANNEL_ID"), text="Проверено ✅", parse_mode='HTML')
     time.sleep(10)
